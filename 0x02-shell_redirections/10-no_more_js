@@ -1,2 +1,2 @@
 #!/bin/bash
-rm *.html ./ */
+find . -type f -name "*.html" -exec rm {} \;
