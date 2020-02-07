@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# gives you information about the holbertonschool file
+for i in $holbertonschool
+do
+    echo "$i" | cut -d'-' -f2
+done
