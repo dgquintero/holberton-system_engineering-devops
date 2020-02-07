@@ -1,11 +1,11 @@
 # 0x04. Loops, conditions and parsing
 ## About
-How to create SSH keys
-What is the advantage of using #!/usr/bin/env bash over #!/bin/bash
-How to use while, until and for loops
-How to use if, else, elif and case condition statements
-How to use the cut command
-What are files and other comparison operators, and how to use them
+- How to create SSH keys
+- What is the advantage of using #!/usr/bin/env bash over #!/bin/bash
+- How to use while, until and for loops
+- How to use if, else, elif and case condition statements
+- How to use the cut command
+- What are files and other comparison operators, and how to use them
 
 ## File Descriptions
 **[0-RSA_public_key.pub](0-RSA_public_key.pub)** - Create a SSH RSA key pair
@@ -28,3 +28,4 @@ What are files and other comparison operators, and how to use them
 **[9-to_file_or_not_to_file](9-to_file_or_not_to_file)**
 
 **[10-fizzbuzz](10-fizzbuzz)**
+
