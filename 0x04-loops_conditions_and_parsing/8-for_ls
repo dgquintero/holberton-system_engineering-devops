@@ -3,7 +3,7 @@
 # The content of the current directory
 # In a list format
 # Where only the part of the name after the first dash is displayed (refer to the example)
-for i in "$(ls -C1)"
+for i in $(ls -C1)
 do
     echo "$i" | cut -d'-' -f2
 done
