@@ -7,3 +7,8 @@
 - All your Bash script files must be executable
 - The first line of all your Bash scripts should be exactly #!/usr/bin/env ruby
 - All your regex must be built for the Oniguruma library
+
+here is the Ruby code that you should use, just replace the regexp part, meaning the code in between the //:
+
+" #!/usr/bin/env ruby
+puts ARGV[0].scan(/127.0.0.[0-9]/).join"
