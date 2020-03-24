@@ -47,10 +47,10 @@ Host *
 #   VisualHostKey no
 #   ProxyCommand ssh -q -W %h:%p gateway.example.com
 #   RekeyLimit 1G 1h
-SendEnv LANG LC_* HashKnownHosts yes
-GSSAPIAuthentication yes
-GSSAPIDelegateCredentials no
-HostName 34.74.116.197
-User ubuntu
-IdentityFile ~/.ssh/holberton
-PasswordAuthentication no
+    SendEnv LANG LC_* HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
+    HostName 34.74.116.197
+    User ubuntu
+    IdentityFile ~/.ssh/holberton
+    PasswordAuthentication no
