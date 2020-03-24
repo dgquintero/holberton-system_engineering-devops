@@ -1,6 +1,6 @@
 # Using Puppet, kills a process named killmenow
 
 exec { 'killnow':
-  command  => 'pkill killmenow',
-  provider => 'shell',
+  path     => ['/usr/bin', '/bin', '/sbin', '/usr/local/bin'],
+  command  => 'pkill -f killmenow',
 }
