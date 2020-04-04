@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Configure Nginx so that its HTTP response contains a custom header
+# Configure Nginx so that its HTTP response contains a custom header.
 # Ignore SC2154 for shellcheck
 
 sudo apt-get -y update
