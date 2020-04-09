@@ -25,6 +25,8 @@ defaults
 	mode	http
 	option	httplog
 	option	dontlognull
+       	option 	forwardfor
+      	option 	http-server-close
         timeout connect 5000
         timeout client  50000
         timeout server  50000
@@ -35,8 +37,6 @@ defaults
 	errorfile 502 /etc/haproxy/errors/502.http
 	errorfile 503 /etc/haproxy/errors/503.http
 	errorfile 504 /etc/haproxy/errors/504.http
-	option forwardfor
-	option http-server-close
 
 frontend www-http
 	bind *:80
@@ -44,7 +44,7 @@ frontend www-http
 	default_backend www-backend
 
 frontend www-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.danielquintero.tech.pem
+	bind *:443 ssl crt /etc/letsencrypt/live/www.danielquintero.tech/all.pem
 	reqadd X-Forwarded-Proto:\ https
 	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
 	use_backend letsencrypt-backend if letsencrypt-acl
@@ -53,8 +53,8 @@ frontend www-https
 backend www-backend
 	redirect scheme https if !{ ssl_fc }
 	balance roundrobin
-	server 1276-web-01 34.74.116.197:80 check
-	server 1276-web-02 3.85.112.73:80 check
+	server 1276-web-01 34.74.116.197:80	check
+	server 1276-web-02 3.85.112.73:80	check
 
 backend letsencrypt-backend
 	server letsencrypt 127.0.0.1:54321
