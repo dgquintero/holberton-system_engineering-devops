@@ -1,4 +1,4 @@
-#!/usr/bin/bash/env bash
+#!/usr/bin/env bash
 # Write a Bash script that configures the container to fit the requirements
 # nginx must be running as nginx user
 # nginx must be listening on all active IPs on port 8080

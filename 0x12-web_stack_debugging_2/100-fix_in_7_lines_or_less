@@ -1,4 +1,4 @@
-#!/usr/bin/bash/env bash
+#!/usr/bin/env bash
 # Bash script that configures the container to fit the requirements in 7lines
 pkill -f apache2
 chown nginx:nginx /etc/nginx/nginx.conf
