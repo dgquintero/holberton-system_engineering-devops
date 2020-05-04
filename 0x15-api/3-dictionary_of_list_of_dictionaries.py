@@ -4,17 +4,16 @@ and export data in a JSON file
 '''
 import json
 import requests
-from sys import argv
 
 
 if __name__ == "__main__":
-    employees = requests.get('https://jsonplaceholder.typicode.com/users').json()
+    emplo = requests.get('https://jsonplaceholder.typicode.com/users').json()
 
     todos = requests.get('https://jsonplaceholder.typicode.com/todos').json()
 
     user_dic = {}
     username_dic = {}
-    for user in employees:
+    for user in emplo:
         user_id = user.get('id')
         user_dic[user_id] = []
         username_dic[user_id] = user.get('username')
