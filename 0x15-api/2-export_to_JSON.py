@@ -19,7 +19,7 @@ if __name__ == "__main__":
         task_dic = {}
         task_dic['task'] = task.get('title')
         task_dic['completed'] = task.get('completed')
-        task_dic['username'] = task.get('username')
+        task_dic['username'] = employee.get('username')
         task_list.append(task_dic)
     json_obj = {}
     json_obj[user_id] = task_list
