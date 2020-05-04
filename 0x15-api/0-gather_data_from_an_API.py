@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Python script that fetches https://jsonplaceholder.typicode.com/posts/1
+''' Python script that fetches https://jsonplaceholder.typicode.com
 '''
 import requests
 from sys import argv
