@@ -6,6 +6,7 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=""):
+    ''' Function that queries the Reddit API'''
     if after is None:
         return []
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
