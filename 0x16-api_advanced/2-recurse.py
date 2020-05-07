@@ -16,9 +16,9 @@ def recurse(subreddit, hot_list=[], after=""):
         url += '?after={}'.format(after)
     req = requests.get(url, headers=headers, allow_redirects=False)
     if str(req) != '<Response [200]>':
-        print(None)
+        return(None)
     RJson = req.json()
-    HotPosts = RJson.get('data', {}).get('children')
+    HotPosts = RJson.get('data').get('children')
     for post in HotPosts:
         hot_list.append(post.get('data').get('title'))
     return hot_list + recurse(subreddit, [], RJson.get('data').get('after'))
