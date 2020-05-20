@@ -1,5 +1,5 @@
-# Apache has 500 error
+# Apache has 500 error.
 exec { 'fix_error_500':
-  command => "sed -i s/phpp/php /vas/www/html/wp-settings.php",
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
   path    => '/bin/',
 }
