@@ -1,0 +1,35 @@
+server {
+    listen 80;
+    listen [::]:80 default_server;
+    location /hbnb_static/ {
+	alias /data/web_static/current/;
+    }
+    # Make accesile from htt://localhost/
+    server_name localhost;
+    location /airbnb-onepage/ {
+    	proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+    }
+    location /airbnb-dynamic/number_odd_or_even/{
+        rewrite /airbnb-dynamic/(.*) /$1 break;
+        proxy_pass http://0.0.0.0:5001/number_odd_or_even;
+    }
+    location /api/ {
+        proxy_pass http://0.0.0.0:5002/api/;
+    }
+    location / {
+        proxy_pass http://0.0.0.0:5003/2-hbnb/;
+    }
+    location /static {
+        root /home/ubuntu/AirBnB_clone_v4/web_dynamic;
+    }
+    root   /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+    add_header X-Served-By 1276-web-01;
+}
