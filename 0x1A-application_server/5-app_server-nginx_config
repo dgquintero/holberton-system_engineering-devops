@@ -17,10 +17,10 @@ server {
         proxy_pass http://0.0.0.0:5002/api/;
     }
     location / {
-        proxy_pass http://0.0.0.0:5003/2-hbnb/;
+        proxy_pass http://127.0.0.1:5003/2-hbnb/;
     }
     location /static {
-        root /home/ubuntu/AirBnB_clone_v4/web_dynamic;
+        proxy_pass http://127.0.0.1:5003/;
     }
     root   /var/www/html;
     index index.html index.html index.nginx-debian.html;
@@ -32,4 +32,7 @@ server {
         internal;
     }
     add_header X-Served-By 1276-web-01;
+}
+upstream app_server_djangoapp {
+    server localhost:6000 fail_timeout=0;
 }
